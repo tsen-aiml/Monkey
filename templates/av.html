@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monkey Repellent</title>
+</head>
+<body>
+    <h1>Monkey Repellent</h1>
+
+    <button onclick="playBoth()">Play Both</button>
+    
+    <!-- Video Player -->
+    <video id="outputVideo" width="640" height="480">
+        <source src="D:/project 2/Monkey/monkey_out.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Audio Player -->
+    <audio id="myAudio">
+        <source src="D:/project 2/Monkey/Siren Sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playBoth() {
+            var video = document.getElementById("outputVideo");
+            var audio = document.getElementById("myAudio");
+
+            video.play();
+            audio.play();
+
+            video.onended = function() {
+                audio.pause();
+            };
+        }
+    </script>
+</body>
+</html>
